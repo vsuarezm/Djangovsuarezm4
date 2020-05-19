@@ -1,0 +1,30 @@
+{% extends 'measure/base.html' %}
+{% block content %}
+<div class="container">
+    <form method="get">
+        <input type="text" name="codigo" placeholder="Código">
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="text" name="descripcion" placeholder="Descripción">
+        <input type="text" name="tipoIndicador" placeholder="tipoIndicador">
+
+        <select name="prioridad">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+            <option value="4">5</option>
+            <option value="5">6</option>
+            <option value="6">7</option>
+            <option value="7">8</option>
+            <option value="8">9</option>
+            <option value="9">10</option>
+        </select>
+        <button type="submit">Adicionar</button>
+    </form>
+    {% for measure in measures %}
+    <ul class="list-group">
+        <li class="list-group-item">{{measure.codigo}} , {{measure.nombre}} , {{measure.descripcion}} , {{measure.tipoIndicador}}, {{measure.prioridad}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
